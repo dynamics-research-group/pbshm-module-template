@@ -1,0 +1,13 @@
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "module_creator@domain.com",
+  "github_username": "JohnDoe",
+  "project_namespace": "pbshm",
+  "module_name": "{{ cookiecutter.project_namespace }} Module",
+  "project_slug": "{{ cookiecutter.module_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_short_description": "A template module for use inside the ROSEHIPS PBSHM Framework.",
+  "version": "0.1.0",
+  "project_type": ["framework", "core"],
+  "license": ["GNU Affero General Public License v3", "MIT license", "Apache Software License 2.0", "GNU General Public License v3"]
+}

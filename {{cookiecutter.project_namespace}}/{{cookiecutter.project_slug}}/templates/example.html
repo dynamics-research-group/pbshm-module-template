@@ -1,0 +1,13 @@
+{{ '{' }}% extends 'portal.html' %{{ '}' }}
+
+{{ '{' }}% block title %{{ '}' }}
+{{ cookiecutter.project_slug }}
+{{ '{' }}% endblock %{{ '}' }}
+{{ '{' }}% block content %{{ '}' }}
+
+This module is called {{ '{{' }} module_name {{ '}}' }} which was been authored by 
+{{ '{' }}% for university in universities %{{ '}' }}
+    {{ '{{' }} university {{ '}}' }}
+{{ '{' }}% endfor %{{ '}' }}
+
+{{ '{' }}% endblock %{{ '}' }}
