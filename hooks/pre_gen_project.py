@@ -2,6 +2,7 @@ import sys
 import os
 import subprocess
 import pathlib
+import venv
 
 parent_dir = pathlib.Path(os.getcwd()).parent.resolve()
 venv_name = "env"  # Could pass this as a param in cookiecutter.json.
@@ -17,9 +18,7 @@ subprocess_params = {
 
 try:
     # Create the venv, could modify the python version here.
-    result = subprocess.run([python_executable, "-m", "venv", env_path], **subprocess_params)
-    print(f"stdout venv creation: {result.stdout.decode()}")
-    print(f"stderr venv creation: {result.stderr.decode()}")
+    venv.create(env_path, with_pip=True)
 
     # Determine the path to the venv's python executable
     if sys.platform == "win32":
