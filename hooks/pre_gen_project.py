@@ -32,8 +32,8 @@ try:
     print("Installing PBSHM", "{{ cookiecutter.project_type }}".title())
     result = subprocess.run([venv_python, "-m", "pip", "install", "pbshm-{{ cookiecutter.project_type }}"], **subprocess_params)
     
-    print(f"stdout pip install pbshm-core: {result.stdout.decode()}")
-    print(f"stderr pip install pbshm-core: {result.stderr.decode()}")
+    print(f"stdout pip install pbshm-{{ cookiecutter.project_type }}: {result.stdout.decode()}")
+    print(f"stderr pip install pbshm-{{ cookiecutter.project_type }}: {result.stderr.decode()}")
 
 except subprocess.CalledProcessError as e:
     print(f"An error occurred: {e.output.decode()}")
