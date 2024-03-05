@@ -52,8 +52,10 @@ try:
     else:
         raise OSError("Unsupported operating system. Currently only Linux and Windows are supported.")
 
-    # Install pbshm core in venv by directly using the venv's python executable
-    result = subprocess.run([venv_python, "-m", "pip", "install", "pbshm-core"], **subprocess_params)
+    # Install pbshm core/framework in venv by directly using the venv's python executable
+    print("Installing PBSHM", "{{ cookiecutter.project_type }}".title())
+    result = subprocess.run([venv_python, "-m", "pip", "install", "pbshm-{{ cookiecutter.project_type }}"], **subprocess_params)
+    
     print(f"stdout pip install pbshm-core: {result.stdout.decode()}")
     print(f"stderr pip install pbshm-core: {result.stderr.decode()}")
 
