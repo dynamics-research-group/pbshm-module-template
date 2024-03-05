@@ -14,3 +14,11 @@ for item in os.listdir(top_most_old_path):
     shutil.move(old_item_path, new_item_path)
 
 shutil.rmtree(top_most_old_path)
+
+
+# Rename relevant init file
+os.rename("init_{{ cookiecutter.project_type }}.py", "__init__.py")
+
+# Remove redundant init file
+other_init = "framework" if "{{ cookiecutter.project_type}}" == "core" else "core"
+os.remove(f"init_{other_init}.py")
