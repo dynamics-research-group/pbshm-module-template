@@ -23,31 +23,8 @@ try:
     # Determine the path to the venv's python executable
     if sys.platform == "win32":
         venv_python = os.path.join(env_path, "Scripts", "python.exe")
-        
-        # Adding environment variables to environment activation.
-        env_vars_cmd = [
-            "set FLASK_APP=pbshm",
-            "set FLASK_DEBUG=1"
-        ]
-        with open(os.path.join(env_path, "Scripts", "activate.bat"), 'a') as file:
-            file.write("\r\n" + "\r\n".join(env_vars_cmd))
-    
-        env_vars_ps = [
-            "$env:FLASK_APP = 'pbshm'",
-            "$env:FLASK_DEBUG = '1'"
-        ]
-        with open(os.path.join(env_path, "Scripts", "Activate.ps1"), 'a') as file:
-            file.write('\n' + '\n'.join(env_vars_ps))
-
     elif sys.platform in ("linux", "linux2"):
         venv_python = os.path.join(env_path, "bin", "python")
-        env_vars_linux = [
-            "export FLASK_APP=pbshm",
-            "export FLASK_DEBUG=1"
-        ]
-        with open(os.path.join(venv_python, "bin", "activate"), 'a') as file:
-            file.write('\n' + '\n'.join(env_vars_linux))
-    
     else:
         raise OSError("Unsupported operating system. Currently only Linux and Windows are supported.")
 
