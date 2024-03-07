@@ -13,8 +13,8 @@ bp = Blueprint(
     template_folder="templates"
 )
 
-@bp.route("/")
-@authenticate_request("{{cookiecutter.project_slug}}-home")
+@bp.route("/{{ cookiecutter.project_slug }}/home")
+@authenticate_request("{{ cookiecutter.project_slug }}-home")
 def module_homepage():
     with open(join(dirname(__file__), "static/static_file.json"), 'r') as f:
         jsond = json.load(f)
