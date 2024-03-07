@@ -8,13 +8,13 @@ from os.path import join, dirname
 
 # Create the module blueprint
 bp = Blueprint(
-    "{{cookiecutter.project_slug}}",
+    "{{cookiecutter.__project_slug}}",
     __name__,
     template_folder="templates"
 )
 
-@bp.route("/{{ cookiecutter.project_slug }}/home")
-@authenticate_request("{{ cookiecutter.project_slug }}-home")
+@bp.route("/{{ cookiecutter.__project_slug }}/home")
+@authenticate_request("{{ cookiecutter.__project_slug }}-home")
 def module_homepage():
     with open(join(dirname(__file__), "static/static_file.json"), 'r') as f:
         jsond = json.load(f)

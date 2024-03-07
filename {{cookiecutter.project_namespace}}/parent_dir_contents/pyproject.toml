@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "{{cookiecutter.project_slug}}"
+name = "{{cookiecutter.__project_slug}}"
 version = "{{cookiecutter.version}}"
 authors = [
     { name = "{{cookiecutter.first_name}} {{cookiecutter.last_name}}", email = "{{cookiecutter.email}}" }
@@ -22,7 +22,7 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}"
+homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.__project_slug}}"
 
 [tool.setuptools.packages.find]
 exclude = ["instance"]

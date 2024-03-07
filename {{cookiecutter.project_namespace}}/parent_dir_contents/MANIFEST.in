@@ -1,4 +1,4 @@
 global-include *.html
 global-include *.css
-include {{ cookiecutter.project_namespace }}/{{ cookiecutter.project_slug }}/files/*.json
+include {{ cookiecutter.project_namespace }}/{{ cookiecutter.__project_slug }}/files/*.json
 exclude {{ cookiecutter.project_namespace }}/__init__.py

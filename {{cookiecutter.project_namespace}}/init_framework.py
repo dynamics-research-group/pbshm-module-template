@@ -35,7 +35,7 @@ def create_app(test_config=None):
                 "Sideload Module": "sideloader.list_modules"
             },
             "Development":{
-                "{{ cookiecutter.module_name }}": "{{ cookiecutter.project_slug }}.module_homepage"
+                "{{ cookiecutter.module_name }}": "{{ cookiecutter.__project_slug }}.module_homepage"
             }
         }
     )
@@ -67,8 +67,8 @@ def create_app(test_config=None):
     app.register_blueprint(cleanse_commands.bp)
 
     # Add cookiecutter module
-    from {{ cookiecutter.project_namespace }} import {{ cookiecutter.project_slug }}
-    app.register_blueprint({{ cookiecutter.project_slug }}.routes.bp)
+    from {{ cookiecutter.project_namespace }} import {{ cookiecutter.__project_slug }}
+    app.register_blueprint({{ cookiecutter.__project_slug }}.routes.bp)
 
     #Add Sideloader Blueprints
     with app.app_context():

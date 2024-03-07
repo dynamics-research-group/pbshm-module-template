@@ -28,24 +28,24 @@ os.remove(f"init_{other_init}.py")
 
 side_loader_json = {
     "package": {
-        "name": "{{ cookiecutter.project_slug }}",
+        "name": "{{ cookiecutter.__project_slug }}",
         "source": str(parent_dir),
     },
-    "namespace": "{{ cookiecutter.project_namespace }}.{{ cookiecutter.project_slug }}",
+    "namespace": "{{ cookiecutter.project_namespace }}.{{ cookiecutter.__project_slug }}",
     "path": [
         "{{ cookiecutter.project_namespace }}",
-        "{{ cookiecutter.project_slug }}",
+        "{{ cookiecutter.__project_slug }}",
         "__init__.py"
     ],
-    "url_prefix": "/{{ cookiecutter.project_slug }}",
+    "url_prefix": "/{{ cookiecutter.__project_slug }}",
     "blueprint": True,
     "navigation": {
         "system": {
-            "Example Home": "{{cookiecutter.project_slug}}-home"
+            "Example Home": "{{cookiecutter.__project_slug}}-home"
         }
     }
 }
-with open(os.path.join(str(current_dir), "{{ cookiecutter.project_slug }}_sideloader.json"), 'w') as f:
+with open(os.path.join(str(current_dir), "{{ cookiecutter.__project_slug }}_sideloader.json"), 'w') as f:
     json.dump(side_loader_json, f, indent=4)
 
 {% endif %}

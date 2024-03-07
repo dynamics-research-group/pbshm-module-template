@@ -18,7 +18,7 @@ def create_app(test_config=None):
         FOOTER_MESSAGE="PBSHM Debug & Development - PBSHM {{ cookiecutter.module_name }}",
         NAVIGATION={
             "modules":{
-                "{{ cookiecutter.module_name }}" : "{{ cookiecutter.project_slug }}.module_homepage",
+                "{{ cookiecutter.module_name }}" : "{{ cookiecutter.__project_slug }}.module_homepage",
                 "Help": "layout.home"
             }
         }
@@ -91,11 +91,11 @@ def create_app(test_config=None):
             app.register_blueprint(module.bp, url_prefix=pbshm_modules[module_name]["url_prefix"])
 
     # Include Developing Module: {{ cookiecutter.module_name }}
-    from {{cookiecutter.project_namespace}} import {{ cookiecutter.project_slug }} # Note: Must be done after the core modules are loaded in otherwise any references to core modules will fail
-    app.register_blueprint({{ cookiecutter.project_slug }}.bp, url_prefix="/{{ cookiecutter.project_slug }}")
+    from {{cookiecutter.project_namespace}} import {{ cookiecutter.__project_slug }} # Note: Must be done after the core modules are loaded in otherwise any references to core modules will fail
+    app.register_blueprint({{ cookiecutter.__project_slug }}.bp, url_prefix="/{{ cookiecutter.__project_slug }}")
     
     # Set Root Page
-    app.add_url_rule("/", endpoint="{{ cookiecutter.project_slug }}.module_homepage")
+    app.add_url_rule("/", endpoint="{{ cookiecutter.__project_slug }}.module_homepage")
 
     # Return App
     return app
