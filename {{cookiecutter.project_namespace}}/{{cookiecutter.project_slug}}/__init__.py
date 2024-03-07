@@ -1,1 +1,1 @@
-from .{{cookiecutter.project_slug}} import *
+from .routes import *
