@@ -95,7 +95,7 @@ def create_app(test_config=None):
     app.register_blueprint({{ cookiecutter.__project_slug }}.bp, url_prefix="/{{ cookiecutter.__project_slug }}")
     
     # Set Root Page
-    app.add_url_rule("/", endpoint="{{ cookiecutter.__project_slug }}.module_homepage")
+    app.add_url_rule("/", endpoint="layout.home")
 
     # Return App
     return app
