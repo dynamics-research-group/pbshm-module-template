@@ -3,7 +3,46 @@ import os
 import subprocess
 import pathlib
 import venv
+import re
 
+# Validate template variables
+first_name = "{{ cookiecutter.first_name }}".strip()
+if not first_name:
+    raise ValueError("first_name must not be blank.")
+if not re.match("^[a-zA-Z]+$", first_name):
+    raise ValueError("first_name must contain only alphabetic characters.")
+
+last_name = "{{ cookiecutter.last_name }}".strip()
+if not last_name:
+    raise ValueError("last_name must not be blank.")
+if not re.match("^[a-zA-Z]+$", last_name):
+    raise ValueError("last_name must contain only alphabetic characters.")
+
+email = "{{ cookiecutter.email }}".strip()
+if not email:
+    raise ValueError("email must not be blank.")
+if not re.match("^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$", email):
+    raise ValueError("email must be a valid email address.")
+
+project_namespace = "{{ cookiecutter.project_namespace }}".strip()
+if not project_namespace:
+    raise ValueError("project_namespace must not be blank.")
+if not re.match("^[a-zA-Z]+$", project_namespace):
+    raise ValueError("project_namespace must contain only alphabetic characters.")
+
+module_name = "{{ cookiecutter.module_name }}".strip()
+if not module_name:
+    raise ValueError("module_name must not be blank.")
+if not re.match("^[a-zA-Z\s]+$", module_name):
+    raise ValueError("module_name must contain only alphabetic characters.")
+
+version = "{{ cookiecutter.version }}".strip()
+if not re.match("^([0-9]+)\\.([0-9]+)\\.([0-9]+)$", version):
+    raise ValueError("version must match the format X.Y.Z where X, Y, and Z are non-negative integers.")
+
+
+
+# Setting up environment
 parent_dir = pathlib.Path(os.getcwd()).parent.resolve()
 venv_name = "env"  # Could pass this as a param in cookiecutter.json.
 env_path = str(parent_dir / venv_name)
