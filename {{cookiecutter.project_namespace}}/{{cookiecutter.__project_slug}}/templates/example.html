@@ -1,13 +1,13 @@
 {{ '{' }}% extends 'portal.html' %{{ '}' }}
-
 {{ '{' }}% block title %{{ '}' }}
-{{ cookiecutter.module_name }}
+    {{ '{{' }} module_name {{ '}}' }}
 {{ '{' }}% endblock %{{ '}' }}
 {{ '{' }}% block content %{{ '}' }}
-
-This module is called {{ '{{' }} module_name {{ '}}' }} which was been authored by 
-{{ '{' }}% for university in universities %{{ '}' }}
-    {{ '{{' }} university {{ '}}' }}
-{{ '{' }}% endfor %{{ '}' }}
-
+<p>This is the default template for your new module "{{ '{{' }} module_name {{ '}}' }}".</p>
+<p>This template is provided as part of the ROSEHIPS project which is a consortium between the following universities:</p>
+<ul>
+    {{ '{' }}% for university in universities %{{ '}' }}
+        <li>{{ '{{' }} university {{ '}}' }}</li>
+    {{ '{' }}% endfor %{{ '}' }}
+</ul>
 {{ '{' }}% endblock %{{ '}' }}
