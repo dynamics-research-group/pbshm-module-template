@@ -7,13 +7,31 @@
 <body>
 <h1>Creating Modules within the PBSHM Ecosystem</h1>
 <h2>Overview</h2>
-<p>When creating and installing modules, they need integration with either <a href="https://github.com/dynamics-research-group/pbshm-flask-core">PBSHM Flask Core</a>, or the <a href="https://github.com/dynamics-research-group/pbshm-framework">PBSHM Framework</a>. This integration ensures that all base functionality available within the backbone of the software is also accessible from within the module being created. This GitHub repository uses <a href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter</a> to create blank template modules, fully integrated within either the PBSHM Core or the PBSHM Framework.</p>
+<p>The PBSHM Ecosystem works under the premise of a <a href="https://github.com/dynamics-research-group/pbshm-flask-core">core technical library (known as PBSHM core)</a> with additional functionality provided through modules which are included into the core. Several popular modules and the core library are also packaged together in as a singular package through the <a href="https://github.com/dynamics-research-group/pbshm-framework">PBSHM framework</a>.<p>
 
-<p>Following the instructions outlined by this repository, the user is prompted with a few questions to customise the blank project to the module creator's requirements.</p>
+<p>To integrate a PBSHM module with the core, certain files are required to be created and modified; whilst this can be done manually, it is also possible to template these operation to ease development of modules. This repository uses <a href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter</a> to provide this aforementioned template functionality to provide a blank project for module development.</p>
 
 <h2>Creating a New Module</h2>
 
-<h3>Installation Instructions</h3>
+<p>When using <a href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter</a> and the template project included within this repository, the user is prompted with a few questions to customise the blank project generation dependent upon the module creator's requirements.</p>
+
+<p>For people who are familier with PBSHM core/framework and cookiecutter, there is a short explanation <a href="#short-installation-instructions">here</a>. For those who would like a more detailed walkthrough, detailed instructions are included <a href="#detailed-installation-instructions">here</a>.
+
+<h3>Short Installation Instructions</h3>
+<ol>
+  <li>Create a new virtual environment with Python 3.9.18+ and activate the virtual environment.</li>
+  <li>Install cookiecutter via <code>pip</code>
+    <pre><code>pip install cookiecutter</code></pre>
+  </li>
+  <li>
+  </li>Generate blank project using <code>cookiecutter</code>
+    <pre><code>cookiecutter https://github.com/dynamics-research-group/pbshm-module-template</code></pre>
+    This will prompt you to answer several questions which will customise your blank project to your requirements.
+  </li>
+  <li>Setup the core library as <a href="https://github.com/dynamics-research-group/pbshm-flask-core?tab=readme-ov-file#setup">described in the documentation</a>.</li>
+</ol>
+
+<h3>Detailed Installation Instructions</h3>
 
 <ol>
   <li>
