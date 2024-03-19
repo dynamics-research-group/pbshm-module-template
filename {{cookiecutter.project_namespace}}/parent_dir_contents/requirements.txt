@@ -1,5 +1,5 @@
 {% if cookiecutter.project_type == "framework" %}
 pbhsm-framework >= 0.6
 {% elif cookiecutter.project_type == "core" %}
-pbhsm-core>=1.1.1
+pbhsm-core >= 1.1.1
 {% endif %}
