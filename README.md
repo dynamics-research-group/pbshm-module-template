@@ -5,7 +5,7 @@
 </head>
 
 <body>
-<h1>Installing Modules with PBSHM Flask Core</h1>
+<h1>Creating Modules within PBSHM Ecosystem</h1>
 <h2>Overview</h2>
 <p>When creating and installing modules, they need integration with either <a href="https://github.com/dynamics-research-group/pbshm-flask-core">PBSHM Flask Core</a>, or the <a href="https://github.com/dynamics-research-group/pbshm-framework">PBSHM Framework</a>. This integration ensures that all base functionality available within the backbone of the software is also accessible from within the module being created. This GitHub repository uses <a href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter</a> to create blank template modules, fully integrated within either the PBSHM Core or the PBSHM Framework.</p>
 
