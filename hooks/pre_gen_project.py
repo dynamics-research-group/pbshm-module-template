@@ -43,24 +43,31 @@ if not re.match("^([0-9]+)\\.([0-9]+)\\.([0-9]+)$", version):
     raise ValueError("version must match the format X.Y.Z where X, Y, and Z are non-negative integers.")
 
 
-
 # Setting up environment
-parent_dir = pathlib.Path(os.getcwd()).parent.resolve()
-venv_name = "env"  # Could pass this as a param in cookiecutter.json.
-env_path = str(parent_dir / venv_name)
-
-python_executable = sys.executable  # Use current interpreter. 
-
 subprocess_params = {
     "stdout": subprocess.PIPE,
     "stderr": subprocess.PIPE,
     "check": True
 }
+python_executable = sys.executable  # Use current interpreter. 
+
+# If not currently inside a virtual environment then create one, else use 
+# the current virtual environment.
+if not "VIRTUAL_ENV" in os.environ:
+    parent_dir = pathlib.Path(os.getcwd()).parent.resolve()
+    venv_name = "env"  # Could pass this as a param in cookiecutter.json.
+    env_path = str(parent_dir / venv_name)
+
+    try:
+        # Create the venv, could modify the python version here.
+        venv.create(env_path, with_pip=True)
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+else:
+    env_path = os.environ["VIRTUAL_ENV"]
 
 try:
-    # Create the venv, could modify the python version here.
-    venv.create(env_path, with_pip=True)
-
     # Determine the path to the venv's python executable
     if sys.platform == "win32":
         venv_python = os.path.join(env_path, "Scripts", "python.exe")
