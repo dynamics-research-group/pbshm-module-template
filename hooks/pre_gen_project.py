@@ -29,6 +29,8 @@ if not project_namespace:
     raise ValueError("project_namespace must not be blank.")
 if not re.match("^[a-zA-Z]+$", project_namespace):
     raise ValueError("project_namespace must contain only alphabetic characters.")
+if (project_namespace in ("pbshm", "rosehips")) and ("{{ cookiecutter.project_type }}" == "framework"):
+    raise NameError("The namespaces 'pbshm' and 'rosehips' are protected inside the framework installation.")
 
 module_name = "{{ cookiecutter.module_name }}".strip()
 if not module_name:
