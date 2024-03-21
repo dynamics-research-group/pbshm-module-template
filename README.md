@@ -15,7 +15,7 @@
 
 <p>When using <a href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter</a> and the template project included within this repository, the user is prompted with a few questions to customise the blank project generation dependent upon the module creator's requirements.</p>
 
-<p>For people who are familier with PBSHM core/framework and cookiecutter, there is a short explanation <a href="#short-installation-instructions">here</a>. For those who would like a more detailed walkthrough, detailed instructions are included <a href="#detailed-installation-instructions">here</a>.
+<p>For people who are familiar with PBSHM core/framework and cookiecutter, there is a short explanation <a href="#short-installation-instructions">here</a>. For those who would like a more detailed walkthrough, detailed instructions are included <a href="#detailed-installation-instructions">here</a>.
 
 <h3>Short Installation Instructions</h3>
 <ol>
@@ -25,7 +25,7 @@
   </li>
   <li>
   </li>Generate blank project using <code>cookiecutter</code>
-    <pre><code>cookiecutter https://github.com/dynamics-research-group/pbshm-module-template</code></pre>
+    <pre><code>cookiecutter gh:dynamics-research-group/pbshm-module-template</code></pre>
     This will prompt you to answer several questions which will customise your blank project to your requirements.
   </li>
   <li>Setup the core library as <a href="https://github.com/dynamics-research-group/pbshm-flask-core?tab=readme-ov-file#setup">described in the documentation</a>.</li>
@@ -50,7 +50,7 @@
   <li>
     <strong>Generate Module Structure</strong>
     <p>Once Cookiecutter is installed, generate your new module structure by running the following command inside the terminal of an empty directory:</p>
-    <pre><code>cookiecutter https://github.com/dynamics-research-group/pbshm-module-template</code></pre>
+    <pre><code>cookiecutter gh:dynamics-research-group/pbshm-module-template</code></pre>
     <p>Running this Cookiecutter command will prompt you to enter details about the module you intend to create, ensuring a customised and ready-to-use module structure tailored to your needs. Note that this process may take around a minute, as a new virtual environment is created under the name <code>env</code>, and the parent software is installed inside <code>env</code>.</p>
   </li>
 
