@@ -35,8 +35,8 @@
 
 <ol>
   <li>
-    <strong>Check Python Version</strong>
-    <p>When running the cookiecutter command, you will be prompted to install either <a href="https://github.com/dynamics-research-group/pbshm-framework">Framework</a> or <a href="https://github.com/dynamics-research-group/pbshm-flask-core">Core</a>. Therefore, before running this command, you must ensure that your Python version satisfies the requirements of your choice. The Python version requirement can be found within the <code>pyproject.toml</code> file inside their respective GitHub repositories. You can find your Python version by running the command in your terminal</p>
+    <strong>Create Virtual Environment</strong>
+    <p>Create a new virtual environment that satisfies the Python requirements. When running the cookiecutter command, you will be prompted to install either <a href="https://github.com/dynamics-research-group/pbshm-framework">Framework</a> or <a href="https://github.com/dynamics-research-group/pbshm-flask-core">Core</a>. Therefore, before running this command, you must ensure that your Python version satisfies the requirements of your choice. The Python version requirement can be found within the <code>pyproject.toml</code> file inside their respective GitHub repositories. You can find your virtual environment Python version by activating the environment and running the command in your terminal</p>
     <pre><code>python --version</code></pre>
   </li>
 
@@ -51,7 +51,7 @@
     <strong>Generate Module Structure</strong>
     <p>Once Cookiecutter is installed, generate your new module structure by running the following command inside the terminal of an empty directory:</p>
     <pre><code>cookiecutter gh:dynamics-research-group/pbshm-module-template</code></pre>
-    <p>Running this Cookiecutter command will prompt you to enter details about the module you intend to create, ensuring a customised and ready-to-use module structure tailored to your needs. Note that this process may take around a minute, as a new virtual environment is created under the name <code>env</code>, and the parent software is installed inside <code>env</code>.</p>
+    <p>Running this Cookiecutter command will prompt you to enter details about the module you intend to create, ensuring a customised and ready-to-use module structure tailored to your needs. Note that this process may take around a minute as the parent software is installed inside your virtual environment. Note, if you did not previously create and activate your virtual environment, one is automatically created under the name <code>env</code>, and Framework or Core (and necessary requirements) are installed inside this.</p>
   </li>
 
   <li>
