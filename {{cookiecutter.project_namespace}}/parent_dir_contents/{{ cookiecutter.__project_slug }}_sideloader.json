@@ -1,0 +1,19 @@
+{
+    "package": {
+        "name": "{{ cookiecutter.__project_slug }}",
+        "source": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_repo }}"
+    },
+    "namespace": "{{ cookiecutter.project_namespace }}.{{ cookiecutter.__project_slug }}",
+    "path": [
+        "{{ cookiecutter.project_namespace }}",
+        "{{ cookiecutter.__project_slug }}",
+        "__init__.py"
+    ],
+    "url_prefix": "/{{ cookiecutter.__project_slug }}",
+    "blueprint": true,
+    "navigation": {
+        "system": {
+            "Example Home": "{{cookiecutter.__project_slug}}-home"
+        }
+    }
+}

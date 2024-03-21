@@ -22,7 +22,7 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.__project_slug}}"
+homepage = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_repo }}"
 
 [tool.setuptools.packages.find]
 exclude = ["instance"]

@@ -2,7 +2,6 @@
   "first_name": "John",
   "last_name": "Doe",
   "email": "module_creator@domain.com",
-  "github_username": "{{ cookiecutter.first_name | title }}{{ cookiecutter.last_name | title }}",
   "project_namespace": "mynamespace",
   "module_name": "My Module",
   "__project_slug": "{{ cookiecutter.module_name.lower().replace(' ', '_').replace('-', '_') }}",
@@ -17,5 +16,7 @@
     "MIT license",
     "Apache Software License 2.0",
     "GNU General Public License v3"
-  ]
+  ],
+  "github_username": "{{ cookiecutter.first_name | title }}{{ cookiecutter.last_name | title }}",
+  "github_repo": "{{ cookiecutter.__project_slug }}"
 }

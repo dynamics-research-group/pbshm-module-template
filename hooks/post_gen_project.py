@@ -23,29 +23,3 @@ os.rename("init_{{ cookiecutter.project_type }}.py", "__init__.py")
 # Remove redundant init file
 other_init = "framework" if "{{ cookiecutter.project_type}}" == "core" else "core"
 os.remove(f"init_{other_init}.py")
-
-{% if cookiecutter.project_type == "framework" %}
-
-side_loader_json = {
-    "package": {
-        "name": "{{ cookiecutter.__project_slug }}",
-        "source": str(parent_dir),
-    },
-    "namespace": "{{ cookiecutter.project_namespace }}.{{ cookiecutter.__project_slug }}",
-    "path": [
-        "{{ cookiecutter.project_namespace }}",
-        "{{ cookiecutter.__project_slug }}",
-        "__init__.py"
-    ],
-    "url_prefix": "/{{ cookiecutter.__project_slug }}",
-    "blueprint": True,
-    "navigation": {
-        "system": {
-            "Example Home": "{{cookiecutter.__project_slug}}-home"
-        }
-    }
-}
-with open(os.path.join(str(current_dir), "{{ cookiecutter.__project_slug }}_sideloader.json"), 'w') as f:
-    json.dump(side_loader_json, f, indent=4)
-
-{% endif %}
